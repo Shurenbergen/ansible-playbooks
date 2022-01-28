@@ -1,0 +1,17 @@
+---
+- hosts: web_servers
+  become: true
+  tasks:
+    
+    - name: apt update
+      shell: sudo apt update
+      
+    - name: Install git
+      apt: name=git update_cache=yes state=latest
+      loop: [ 'git' ]
+      
+    - name: Git config userName
+      shell: git config --global user.name "Shurenbergen"
+    
+    - name: Git config userEmail
+      shell: git config --global user.email "Sham-aleksandr@yandex.ru"

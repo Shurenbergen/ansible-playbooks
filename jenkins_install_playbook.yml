@@ -1,0 +1,49 @@
+---
+- hosts: jenkins_servers
+  become: yes
+  remote_user: ubuntu
+  become_user: root
+  
+  tasks:
+
+#java
+ 
+    - name: install jre
+      shell: sudo apt-get install default-jre
+ 
+    - name: install jdk
+      shell: sudo apt-get install default-jdk
+ 
+    - name: add repo for java
+      shell: sudo add-apt-repository ppa:linuxuprising/java
+
+    - name: apt new repo use
+      shell: sudo apt update
+    
+    - name: install oracle java
+      shell: sudo apt-get install oracle-java12-installer]
+    
+#jenkins 
+
+    - name: add key repo
+      shell: wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+      
+    - name: add address repo
+      shell: sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+    - name: apt new repo use
+      shell: sudo apt update
+
+    - name: Install jenkins
+      apt:
+        name: jenkins
+        state: latest
+
+    - name: daemon-reload to pick up config changes
+      ansible.builtin.systemd:
+        daemon_reload: yes
+
+    - name: Start jenkins
+      ansible.builtin.systemd:
+        name: jenkins
+        state: started
