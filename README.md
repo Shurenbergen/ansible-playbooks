@@ -8,17 +8,14 @@
   -----------------------------------------------
   
   [name_group]
-  
   Servername ansible_host=your_hostname_ip ansible_user=your_username ansible_ssh_private_key_file=/home/ubuntu/.ssh/your_ssh_key
-  -----------------------------------------------
   - update ansible.cfg like this (need indicate your inventory file, and ignore host_key_checking)
-  -----------------------------------------------
-  
   [defaults]
   
   host_key_checking = false
   inventory         = ./hosts.txt
-  ------------------------------------------------
+ 
+ ------------------------------------------------
 
 ##### Run the Playbook
   cd to your ansible directory and use command as u need
@@ -36,16 +33,12 @@
   -----------------------------------------------
   
   [name_group]
-  
   Servername ansible_host=your_hostname_ip ansible_user=your_username ansible_ssh_private_key_file=/home/ubuntu/.ssh/your_ssh_key
-  -----------------------------------------------
   - update ansible.cfg like this (need indicate your inventory file, and ignore host_key_checking)
-  -----------------------------------------------
-  
   [defaults]
-  
   host_key_checking = false
   inventory         = ./hosts.txt
+  
   ------------------------------------------------
 
 ##### Settings 
