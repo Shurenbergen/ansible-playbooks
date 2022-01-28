@@ -1,3 +1,4 @@
+-----------------------------------------------
 #### ansible-playbooks Git, Jenkins
   my test works for learning ansible
   
@@ -5,22 +6,25 @@
   - Anible version 2.12.1
   - access via ssh to target host
   - update hosts file and add your settings like this
-  -----------------------------------------------
-  
+    
   [name_group]
+  
   Servername ansible_host=your_hostname_ip ansible_user=your_username ansible_ssh_private_key_file=/home/ubuntu/.ssh/your_ssh_key
+  
   - update ansible.cfg like this (need indicate your inventory file, and ignore host_key_checking)
+ 
   [defaults]
   
   host_key_checking = false
+  
   inventory         = ./hosts.txt
  
- ------------------------------------------------
-
 ##### Run the Playbook
   cd to your ansible directory and use command as u need
   ansible-playbook gitplaybook.yml -K
   ansible-playbook jenkins_install_playbook.yml -K
+
+------------------------------------------------
 
 #### LAMP with WP on Ubuntu 20.04
   Linux, Apache, MySQL and PHP with WordPress
@@ -30,17 +34,19 @@
   - Anible version 2.12.1
   - access via ssh to target host
   - update hosts file and add your settings like this
-  -----------------------------------------------
-  
+    
   [name_group]
+  
   Servername ansible_host=your_hostname_ip ansible_user=your_username ansible_ssh_private_key_file=/home/ubuntu/.ssh/your_ssh_key
-  - update ansible.cfg like this (need indicate your inventory file, and ignore host_key_checking)
+ 
+ - update ansible.cfg like this (need indicate your inventory file, and ignore host_key_checking)
+  
   [defaults]
+  
   host_key_checking = false
+  
   inventory         = ./hosts.txt
   
-  ------------------------------------------------
-
 ##### Settings 
   in the playbook lamp.yml (to increase security use ansible vault)
   #MySQL settings
