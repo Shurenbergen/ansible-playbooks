@@ -11,7 +11,7 @@
       loop: [ 'git' ]
       
     - name: Git config userName
-      shell: git config --global user.name "Shurenbergen"
+      shell: git config --global user.name "username"
     
     - name: Git config userEmail
-      shell: git config --global user.email "Sham-aleksandr@yandex.ru"
+      shell: git config --global user.email "user@mail.com"
